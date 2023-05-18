@@ -1,0 +1,16 @@
+select 
+ --data
+A.APPLICATION_NAME card_title, --title
+A.APPLICATION_GROUP card_ subtitle,  --subtitle, set template option to see
+B.ROLE_NAMES card_ text, --card body text
+'Application description and help' card subtext,     --card secondary text, positioned near bottom
+--ui and other attributes 
+null card_modifiers, --card item modifiers
+APEX_UTIL.PREPARE_URL('f?='||A.APPLICATION_ID||':1:&APP_SESSION.:::::) card link,
+--card link, use apex_page.get_url(...)
+NULL card_color, --color modifier, e.g. u-color-1 or u-warning
+A.APPLICATION_ID card_icon, --icon class, e.g. fa-cloud
+APEX_STRING.get_initials(A.APPLICATION_NAME) card_ initials --2 or 3 letters, use apex string.get initials(...) I
+fron APEX_APPLICATIONS A, APEX_APPL_ ACL_USERS B WHERE A.APPLICATION_ID <> :APP_ID
+AND B.APPLICATION_ID = A.APPLICATION_ID AND B.USER_NAME = :APP_USER
+AND UPPER(A.APPLICATION_NAME) LIKE '%'||UPPER(:P1_SEARCH)||'%'

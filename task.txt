@@ -1,0 +1,10 @@
+sql function
+................................................................................
+1.substr
+2.trigger
+3.function
+4.count
+5.sum
+6.avarage
+7.insert
+8.length

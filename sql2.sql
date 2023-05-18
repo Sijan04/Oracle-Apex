@@ -1,0 +1,1 @@
+ insert into GYMEMPLOYEE value ('sijan'1,2);
