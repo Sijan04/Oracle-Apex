@@ -1,0 +1,1 @@
+insert into teacher values (3,'sijan',20)

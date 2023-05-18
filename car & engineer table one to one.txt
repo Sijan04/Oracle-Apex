@@ -1,0 +1,30 @@
+CREATE TABLE Car
+(
+Pk_Car_Id INT PRIMARY KEY,
+Brand VARCHAR(100),
+Model VARCHAR(100)
+);
+CREATE TABLE Engineer
+(
+Pk_Engineer_Id INT PRIMARY KEY,
+FullName VARCHAR(100),
+MobileNo CHAR(11),
+Fk_Car_Id INT FOREIGN KEY REFERENCES Car(Pk_Car_Id)
+);
+
+INSERT INTO Car ('Brand','Model')
+VALUES ('Benz','GLK350');
+INSERT INTO Car ('Brand','Model')
+VALUES ('Toyota','Camry XLE');
+INSERT INTO Engineer ('Pk_Engineer_Id','FullName','MobileNo','Fk_Car_Id')
+VALUES(50,'Elvis Young','08038888888',2);
+INSERT INTO Engineer ('Pk_Engineer_Id','FullName','MobileNo','Fk_Car_Id')
+VALUES(51,'Bola Johnson','08020000000',1);
+INSERT INTO Engineer ('Pk_Engineer_Id','FullName','MobileNo','Fk_Car_Id')
+VALUES(52,'Kalu Ikechi','09098888888',1);
+INSERT INTO Engineer ('Pk_Engineer_Id','FullName','MobileNo','Fk_Car_Id')
+VALUES(53,'Smart Wonodu','08185555555',1);
+INSERT INTO Engineer ('Pk_Engineer_Id','FullName','MobileNo','Fk_Car_Id')
+VALUES(54,Umaru Suleja','08056676666',1);
+SELECT * FROM Car;
+SELECT * FROM Engineer;
